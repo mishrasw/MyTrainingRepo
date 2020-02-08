@@ -11,7 +11,10 @@ specflow.tools.msbuild.generation
 
 #instructions
 
-> Clone the project to any location.
-> Build project in visual studio
-> open Test Explorer
-> Run tests in test explorer & see results in Test Explorer
+- Clone the project to any location.
+
+- Build project in visual studio
+
+- open Test Explorer
+
+- Run tests in test explorer & see results in Test Explorer
