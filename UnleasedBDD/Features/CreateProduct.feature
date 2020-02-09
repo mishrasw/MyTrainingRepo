@@ -11,8 +11,8 @@ Given User logs in to Unleased
 Scenario: Create a new product
 	Given I have navigated to product screen and entered product details
 	| ProductCode	| ProductDescription |
-	| TST6			| Test Comment	 |
+	| TST8  		| Test Comment	 |
 	Then I verify the product is created successfully
 	| ProductCode	| 
-	| TST6			| 
+	| TST8			| 
 	

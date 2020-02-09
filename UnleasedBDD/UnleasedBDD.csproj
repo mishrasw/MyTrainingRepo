@@ -147,6 +147,7 @@
     <Compile Include="StepDefinitions\ProductSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils\hooks.cs" />
+    <Compile Include="utils\OtherUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">

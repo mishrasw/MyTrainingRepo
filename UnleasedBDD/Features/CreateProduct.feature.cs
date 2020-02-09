@@ -119,7 +119,7 @@ this.FeatureBackground();
                             "ProductCode",
                             "ProductDescription"});
                 table1.AddRow(new string[] {
-                            "TST6",
+                            "TST7",
                             "Test Comment"});
 #line 12
  testRunner.Given("I have navigated to product screen and entered product details", ((string)(null)), table1, "Given ");
@@ -127,7 +127,7 @@ this.FeatureBackground();
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProductCode"});
                 table2.AddRow(new string[] {
-                            "TST6"});
+                            "TST7"});
 #line 15
  testRunner.Then("I verify the product is created successfully", ((string)(null)), table2, "Then ");
 #line hidden

@@ -10,6 +10,10 @@ Given User logs in to Unleased
 Scenario: Create a new sales order
 	Given I have created a new sales order
 	| CustomerCode | ProductCode | Quantity |
-	| GBRO         | TST1        | 1        |
+	| GBRO         | COUCH3      | 1        |
+	And I am able to complete a sales Order
+	Then verify stocks in hand for the product
+	| ProductCode |
+	| COUCH3      |
 	
 	

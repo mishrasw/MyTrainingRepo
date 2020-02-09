@@ -29,6 +29,18 @@ namespace UnleasedBDD.steps
             new SalesOrderPage(driver).CreateSalesOrder(table);
         }
 
+        [Given(@"I am able to complete a sales Order")]
+        public void GivenICompleteASalesOrder()
+        {
+            new SalesOrderPage(driver).CompleteSalesOrder();
+        }
+        [Then(@"verify stocks in hand for the product")]
+        public void ThenVerifyStocksInHandForTheProduct(Table table)
+        {
+            new SalesOrderPage(driver).verifyStockInHand(table);
+        }
+
+
 
 
 

@@ -121,10 +121,20 @@ this.FeatureBackground();
                             "Quantity"});
                 table3.AddRow(new string[] {
                             "GBRO",
-                            "TST1",
+                            "COUCH3",
                             "1"});
 #line 11
  testRunner.Given("I have created a new sales order", ((string)(null)), table3, "Given ");
+#line hidden
+#line 14
+ testRunner.And("I am able to complete a sales Order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ProductCode"});
+                table4.AddRow(new string[] {
+                            "COUCH3"});
+#line 15
+ testRunner.Then("verify stocks in hand for the product", ((string)(null)), table4, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
