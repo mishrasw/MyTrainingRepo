@@ -20,23 +20,23 @@ namespace UnleasedBDD.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Create Product")]
-    public partial class CreateProductFeature
+    [NUnit.Framework.DescriptionAttribute("GooglePage")]
+    public partial class GooglePageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "CreateProduct.feature"
+#line 1 "GooglePage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Create Product", "\tIn order to create a new product\r\n\tAs a unleased user\r\n\tI want to input proper p" +
-                    "roduct data\r\n\tAnd save the product details", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GooglePage", "\tIn order to search something in Google Page\r\n\tAs a user\r\n\tI want to seacrh value" +
+                    " momentum", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,25 +74,16 @@ namespace UnleasedBDD.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 7
-#line hidden
-#line 8
-testRunner.Given("User logs in to Unleased", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a new product")]
+        [NUnit.Framework.DescriptionAttribute("Search in Google Page")]
         [NUnit.Framework.CategoryAttribute("regression")]
-        public virtual void CreateANewProduct()
+        public virtual void SearchInGooglePage()
         {
             string[] tagsOfScenario = new string[] {
                     "regression"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a new product", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search in Google Page", null, new string[] {
                         "regression"});
-#line 11
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -112,24 +103,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
-this.FeatureBackground();
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "searchText"});
+                table5.AddRow(new string[] {
+                            "Value Momentum"});
+#line 8
+ testRunner.Given("I have searched the details in Google Page", ((string)(null)), table5, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ProductCode",
-                            "ProductDescription"});
-                table1.AddRow(new string[] {
-                            "TST8",
-                            "Test Comment"});
-#line 12
- testRunner.Given("I have navigated to product screen and entered product details", ((string)(null)), table1, "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ProductCode"});
-                table2.AddRow(new string[] {
-                            "TST8"});
-#line 15
- testRunner.Then("I verify the product is created successfully", ((string)(null)), table2, "Then ");
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "linkToBeDisplayed"});
+                table6.AddRow(new string[] {
+                            "ValueMomentum | IT Services & Software"});
+#line 11
+ testRunner.Then("it should display the results on webpage", ((string)(null)), table6, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
