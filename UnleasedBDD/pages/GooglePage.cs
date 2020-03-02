@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AventStack.ExtentReports;
 using log4net;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -20,14 +21,20 @@ namespace UnleasedBDD.pages
 
         private IWebDriver driver;
         private WebDriverWait wait;
-        
+        private readonly ILog log;
+        private readonly ExtentTest test;
+        private readonly ScenarioContext context;
 
-        public GooglePage(IWebDriver driver)
+
+        public GooglePage(IWebDriver driver, ScenarioContext context)
         {
+            this.context = context;
             this.driver = driver;
             PageFactory.InitElements(driver, this);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-           
+            log = context.Get<ILog>("log");
+            test = context.Get<ExtentTest>("extentTest");
+
 
         }
         [FindsBy(How = How.XPath, Using = "//input[@name='q']")]
@@ -51,6 +58,8 @@ namespace UnleasedBDD.pages
                 txt_searchBox.SendKeys(Keys.Tab);
                 btn_searchResults.Click();
                 wait.Until(ExpectedConditions.ElementExists(By.XPath("(//span[text()='ValueMomentum'])[1]")));
+                log.Info("Successfully Clicked on Search Button");
+                test.Log(Status.Pass, "Successfully Clicked on Search Button");
 
             }
         }
@@ -65,6 +74,8 @@ namespace UnleasedBDD.pages
                 Console.WriteLine(tab.linkToBeDisplayed);
                 IWebElement linkDisplayed = driver.FindElement(By.XPath("//h3[text()='"+ lnkResults + "']"));
                 Assert.IsTrue(new OtherUtils(driver).isElementPresent(linkDisplayed), "Link Displayed successfully");
+                log.Info("Link Displayed successfully");
+                test.Log(Status.Pass, "Link Displayed successfully");
             }
         }
     }

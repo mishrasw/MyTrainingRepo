@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AventStack.ExtentReports;
 using BoDi;
 using log4net;
 using OpenQA.Selenium;
@@ -17,12 +18,15 @@ namespace UnleasedBDD.StepDefinitions
         private IWebDriver driver;
         private readonly ScenarioContext context;
         private readonly ILog log;
+        private readonly ExtentTest test;
 
         public GoogleSteps(ScenarioContext context)
         {
             this.context = context;
             driver = context.Get<IWebDriver>("driver");
             log = context.Get<ILog>("log");
+            test = context.Get<ExtentTest>("extentTest");
+
         }
 
 
@@ -30,14 +34,15 @@ namespace UnleasedBDD.StepDefinitions
         public void GivenIHaveSearchedTheDetailsInGooglePage(Table table)
         {
             log.Info("Searching into Google Home Page");
-            new GooglePage(driver).searchGooglePage(table);
+            new GooglePage(driver,context).searchGooglePage(table);
+            test.Log(Status.Pass,"Search into Google Home Page");
         }
 
         [Then(@"it should display the results on webpage")]
         public void ThenItShouldDisplayTheResultsOnWebpage(Table table)
         {
             log.Info("Verifying results page");
-            new GooglePage(driver).verifyResult(table);
+            new GooglePage(driver,context).verifyResult(table);
         }
 
     }
